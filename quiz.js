@@ -23,6 +23,8 @@ $(document).ready(function(){
     reset = false;
      
     $("button").click (function (event){
+           score = 0 
+           for (let i = 0; i < questions.length; i++)  {
            $("input[name=q"+i+"]").each (function (index){
                   choice = $(this).parent().text(); 
                   if ($( this ).prop("checked") == true && answers [0] == choice){
@@ -46,7 +48,7 @@ $(document).ready(function(){
                 }
 
            });
-           
+          }    
       $("#quiz-box").append ("<h2>Your score is: " + score + "</h2>");
       }); 
 
